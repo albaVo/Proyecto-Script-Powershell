@@ -19,6 +19,11 @@ do {
   switch ($opcion) {
     1 {
         cls
+        ""
+        "=================="
+        " INICIAR SERVICIO "
+        "=================="
+        ""
         $servicio = read-host "Indica el servicio para iniciarlo"
         Start-Service $servicio
         ""
@@ -26,21 +31,41 @@ do {
     }
     2 {
         cls
+        ""
+        "=================="
+        " DETENER SERVICIO "
+        "=================="
+        ""
         $servicio = read-host "Indica el servicio para detenerlo"
-        Stop-Service $servicio
+        Stop-Service $servicio -Force -Confirm
         ""
         "------ Servicio detenido con exito ------"
     }
     3 {
         cls
+        ""
+        "==================="
+        " OBTENER SERVICIOS "
+        "==================="
+        ""
         Get-Service
     }
     4 {
         cls
+        ""
+        "================================"
+        " OBTENER SERVICIOS EN EJECUCION "
+        "================================"
+        ""
         Get-Service | Where-Object {$_.Status -eq "Running"}
     }
     5 {
         cls
+        ""
+        "=================="
+        " OBTENER SERVICIO "
+        "=================="
+        ""
         $servicio = read-host "Indica el servicio para obtener informacion"
         Get-Service $servicio
     }

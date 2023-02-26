@@ -7,6 +7,7 @@ function menu {
   write-host "2. Gestion de los procesos"
   write-host "3. Gestion de los servicios"
   write-host "4. Registros de eventos"
+  write-host "5. Ayuda"
   write-host ""
   write-host ". Salir"
   write-host ""
@@ -18,20 +19,23 @@ do {
   switch ($opcion) {
     1 {
       cls
-      
-      opciones/./software.ps1
+      ./opciones/software.ps1
     }
     2 {
       cls
-      opciones/./procesos.ps1
+      ./opciones/procesos.ps1
     }
     3 {
       cls
-      opciones/./servicios.ps1
+      ./opciones/servicios.ps1
     }
     4 {
       cls
-      opciones/./eventos.ps1
+      ./opciones/eventos.ps1
+    }
+    5 {
+      cls
+      ./opciones/ayuda.ps1
     }
   }
   pause

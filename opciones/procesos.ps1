@@ -98,6 +98,10 @@ do {
     2 {
         cls
         ""
+        "================="
+        " INICIAR PROCESO "
+        "================="
+        ""
         $proceso = read-host "Indica el proceso para iniciarlo"
         Start-Process -FilePath $proceso
         ""
@@ -105,6 +109,10 @@ do {
     }
     3 {
         cls
+        ""
+        "================="
+        " DETENER PROCESO "
+        "================="
         ""
         $proceso = read-host "Indica el proceso para detenerlo"
         Stop-Process -Name $proceso
@@ -114,10 +122,18 @@ do {
     4 {
         cls
         ""
+        "=================="
+        " OBTENER PROCESOS "
+        "=================="
+        ""
         Get-Process
     }
     5 {
         cls
+        ""
+        "================="
+        " OBTENER PROCESO "
+        "================="
         ""
         $proceso = read-host "Indica el proceso para obtener informacion"
         Get-Process -Name $proceso

@@ -18,19 +18,20 @@ do {
   switch ($opcion) {
     1 {
       cls
-      ./software.ps1
+      
+      opciones/./software.ps1
     }
     2 {
       cls
-      ./procesos.ps1
+      opciones/./procesos.ps1
     }
     3 {
       cls
-      ./servicios.ps1
+      opciones/./servicios.ps1
     }
     4 {
       cls
-      ./eventos.ps1
+      opciones/./eventos.ps1
     }
   }
   pause

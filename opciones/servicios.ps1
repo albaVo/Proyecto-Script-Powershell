@@ -6,7 +6,7 @@ function menu {
   write-host "1. Iniciar un servicio"
   write-host "2. Detener un servicio"
   write-host "3. Obtener todos los servicios"
-  write-host "4. Obtener todos los servicios en ejecución"
+  write-host "4. Obtener todos los servicios en ejecucion"
   write-host "5. Obener un servicio en concreto"
   write-host ""
   write-host "6. Salir"

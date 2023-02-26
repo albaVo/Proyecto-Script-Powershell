@@ -1,17 +1,15 @@
 function menu {
   cls
   write-host ""
-  write-host "========== Menu Software =========="
+  write-host "========== Menu Gestion Software =========="
   write-host ""
-  write-host "1. Listar programas instalados"
-  write-host "2. Antivirus instalado"
-  write-host "3. Numero de programas instalados"
-  write-host "4. Buscar paquetes instalados"
-  write-host "5. Instalar software"
-  write-host "6. Desinstalar software"
-  write-host "7. Listar actualizaciones"
-  write-host "8. Examinar el equipo en busca de virus"
-  write-host "9. Salir"
+  write-host "1. Programas instalados"
+  write-host "2. Instalar software"
+  write-host "3. Desinstalar software"
+  write-host "4. Listar actualizaciones"
+  write-host "5. Examinar el equipo en busca de virus"
+  write-host " "
+  write-host "6. Salir"
   write-host ""
 }
 
@@ -21,76 +19,60 @@ do {
   switch ($opcion) {
     1 {
       cls
-      ""
-      "======================"
-      " PROGRAMAS INSTALADOS "
-      "======================"
-      ""
-      Get-Package
-      ""
+      do {
+        ""
+        "======================"
+        " PROGRAMAS INSTALADOS "
+        "======================"
+        ""
+        "Sobre que deseas ver informacion"
+        "
+          1. Listar programas instalados
+          2. Numero de programas instalados
+          3. Buscar paquetes instalados
+
+          4. Salir
+        "
+        $opcion = read-host "Selecciona una opcion"
+        if ($opcion -eq 1){
+          Get-Package
+        }
+        elseif ($opcion -eq 2){
+          $numero = ((Get-Package).name).count
+          ""
+          "Hay $numero programas instalados"
+        }
+        elseif ($opcion -eq 3){
+          $paquete = read-host "Introduce el paquete que deseas ver si esta instalado"
+          ""
+          Find-Package $paquete
+        }
+        elseif ($opcion -eq 4){
+          break
+        }
+        else {
+          ""
+          "Elige una opcion valida"
+          ""
+        }
+      }
+      until ($opcion -eq 4) 
     }
     2 {
       cls
       ""
-      "============================="
-      " INDICAR ANTIVIRUS INSTALADO "
-      "============================="
+      "======================"
+      " INSTALACION SOFTWARE "
+      "======================"
       ""
-      ((Get-Package).name) | Select-String 'Defender'
+      $paquete = read-host "Introduce el paquete que deseas instalar"
+      ""
+      Install-Package $paquete
+      ""
+      "----- Paquete instalado con exito -----"
       ""
     }
     3 {
-      cls
-      ""
-      "================================"
-      " NUMERO DE PROGRAMAS INSTALADOS "
-      "================================"
-      ""
-      $numero = ((Get-Package).name).count
-      "Hay $numero programas instalados"
-      ""
-    }
-    4 {
-      cls
-      ""
-      "================================="
-      " BUSQUEDA DE PAQUETES INSTALADOS "
-      "================================="
-      ""
-      $paquete = read-host "Introduce el paquete que deseas ver si esta instalado"
-      ""
-      Find-Package $paquete
-      ""
-    }
-    5 {
-      cls
-      ""
-      "======================"
-      " INSTALACION SOFTWARE "
-      "======================"
-      ""
-      $paquete = read-host "Introduce el paquete que deseas instalar"
-      ""
-      Install-Package $paquete
-      ""
-      "----- Paquete instalado con exito -----"
-      ""
-    }
-    5 {
-      cls
-      ""
-      "======================"
-      " INSTALACION SOFTWARE "
-      "======================"
-      ""
-      $paquete = read-host "Introduce el paquete que deseas instalar"
-      ""
-      Install-Package $paquete
-      ""
-      "----- Paquete instalado con exito -----"
-      ""
-    }
-    6 {
       cls
       ""
       "========================="
@@ -104,17 +86,47 @@ do {
       "----- Paquete desinstalado con exito -----"
       ""
     }
-    7 {
+    4 {
       cls
-      ""
-      "================="
-      " ACTUALIZACIONES "
-      "================="
-      ""
-      Get-HotFix
-      ""
+      do {
+        ""
+        "================="
+        " ACTUALIZACIONES "
+        "================="
+        ""
+        "Indica que deseas listar"
+        "
+          1. Todas las actualizaciones
+          2. Actualizaciones de seguridad
+          3. Actualizacion mas reciente
+
+          4. Salir
+        "
+        $opcion = read-host "Selecciona una opcion"
+        if ($opcion -eq 1){
+          ""
+          Get-Hotfix
+        }
+        elseif ($opcion -eq 2){
+          ""
+          Get-Hotfix -Description "Security*"
+        }
+        elseif ($opcion -eq 3){
+          ""
+          (Get-HotFix | Sort-Object -Property InstalledOn)[-1]
+        }
+        elseif ($opcion -eq 4){
+          break
+        }
+        else {
+          ""
+          "Elige una opcion valida"
+          ""
+        }
+      }
+      until ($opcion -eq 4)
     }
-    8 {
+    5 {
       cls
       ""
       "==================="
@@ -127,4 +139,4 @@ do {
   }
   pause
 }
-until ($opcion -eq '9')
+until ($opcion -eq '6')

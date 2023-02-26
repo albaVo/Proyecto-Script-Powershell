@@ -8,6 +8,7 @@ function menu {
   write-host "3. Gestion de los servicios"
   write-host "4. Registros de eventos"
   write-host "5. Gestion de alias"
+  write-host "6. "
   write-host ". Ayuda"
   write-host ""
   write-host ". Salir"
@@ -38,9 +39,13 @@ do {
       cls
       ./opciones/alias.ps1
     }
+    6 {
+      cls
+      ./opciones/alias.ps1
+    }
      {
       cls
-      ./opciones/ayuda.ps1
+      ./opciones/.ps1
     }
   }
   pause

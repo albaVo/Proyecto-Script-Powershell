@@ -53,6 +53,8 @@ do {
         "=================="
         ""
         Update-Help
+        ""
+        "------ Ayuda actualizada con exito ------"
     }
     5 {
         cls

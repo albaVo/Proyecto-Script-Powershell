@@ -7,7 +7,8 @@ function menu {
   write-host "2. Gestion de los procesos"
   write-host "3. Gestion de los servicios"
   write-host "4. Registros de eventos"
-  write-host "5. Ayuda"
+  write-host "5. Gestion de alias"
+  write-host ". Ayuda"
   write-host ""
   write-host ". Salir"
   write-host ""
@@ -34,6 +35,10 @@ do {
       ./opciones/eventos.ps1
     }
     5 {
+      cls
+      ./opciones/alias.ps1
+    }
+     {
       cls
       ./opciones/ayuda.ps1
     }

@@ -6,9 +6,10 @@ function menu {
   write-host "1. Gestion del software"
   write-host "2. Gestion de los procesos"
   write-host "3. Gestion de los servicios"
-  write-host "4. Registros de eventos"
-  write-host "5. Gestion de alias"
-  write-host "6. "
+  write-host "4. Gestion de alias"
+  write-host "5. Registros de eventos"
+  write-host "6. Información sobre el software y el hardware del sistema"
+  write-host "7. Administrar cuentas de usuario"
   write-host ". Ayuda"
   write-host ""
   write-host ". Salir"
@@ -33,19 +34,19 @@ do {
     }
     4 {
       cls
-      ./opciones/eventos.ps1
+      ./opciones/alias.ps1
     }
     5 {
       cls
-      ./opciones/alias.ps1
+      ./opciones/eventos.ps1
     }
     6 {
       cls
-      ./opciones/alias.ps1
+      ./opciones/info.ps1
     }
-     {
+    7 {
       cls
-      ./opciones/.ps1
+      ./opciones/usuarios.ps1
     }
   }
   pause

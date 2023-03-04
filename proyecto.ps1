@@ -9,7 +9,8 @@ function menu {
   write-host "4. Gestion de alias"
   write-host "5. Registros de eventos"
   write-host "6. Información sobre el software y el hardware del sistema"
-  write-host "7. Administracion cuentas de usuario"
+  write-host "7. Gestion de las cuentas de usuario"
+  write-host "8. Gestion de los grupos"
   write-host ". Ayuda"
   write-host ""
   write-host ". Salir"
@@ -47,6 +48,10 @@ do {
     7 {
       cls
       ./opciones/usuarios.ps1
+    }
+    8 {
+      cls
+      ./opciones/grupos.ps1
     }
   }
   pause

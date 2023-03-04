@@ -9,7 +9,7 @@ function menu {
   write-host "4. Gestion de alias"
   write-host "5. Registros de eventos"
   write-host "6. Información sobre el software y el hardware del sistema"
-  write-host "7. Administrar cuentas de usuario"
+  write-host "7. Administracion cuentas de usuario"
   write-host ". Ayuda"
   write-host ""
   write-host ". Salir"

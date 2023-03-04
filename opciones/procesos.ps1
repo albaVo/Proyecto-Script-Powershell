@@ -4,7 +4,6 @@ function menu {
   write-host "========== Menu Gestion Procesos =========="
   write-host ""
   write-host "1. Informacion sobre los procesos"
-  write-host ""
   write-host "2. Iniciar un proceso"
   write-host "3. Detener un proceso"
   write-host "4. Obtener todos los procesos"

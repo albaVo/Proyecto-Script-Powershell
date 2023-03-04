@@ -11,6 +11,7 @@ function menu {
   write-host "6. Información sobre el software y el hardware del sistema"
   write-host "7. Gestion de las cuentas de usuario"
   write-host "8. Gestion de los grupos"
+  write-host "9. Gestion de los archivos y carpetas"
   write-host ". Ayuda"
   write-host ""
   write-host ". Salir"
@@ -52,6 +53,10 @@ do {
     8 {
       cls
       ./opciones/grupos.ps1
+    }
+    9 {
+      cls
+      ./opciones/ac.ps1
     }
   }
   pause

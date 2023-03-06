@@ -28,7 +28,7 @@ do {
         " VERSION POWERSHELL "
         "===================="
         ""
-        host
+        host | ft -Property Name, Version
     }
     2 {
         cls

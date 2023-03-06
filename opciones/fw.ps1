@@ -33,6 +33,7 @@ do {
       "=================="
       ""
       Set-NetFirewallProfile -Enabled true
+      netsh advfirewall show allprofiles state
       ""
       "----- Firewall activado de todos los perfiles con exito -----"
     }
@@ -44,6 +45,7 @@ do {
       "====================="
       ""
       Set-NetFirewallProfile -Enabled false
+      netsh advfirewall show allprofiles state
       ""
       "----- Firewall desactivado de todos los perfiles con exito -----"
     }

@@ -21,7 +21,7 @@ do {
     }
     2 {
         cls
-        Get-EventLog -LogName Application -Newest 5
+        Get-EventLog -LogName Application -Newest 5 | ft
     }
     3 {
         cls

@@ -90,7 +90,8 @@ do {
         " INFORMACION ADAPTADORES RED "
         "============================="
         ""
-        Get-NetAdapter
+        Get-NetAdapter | format-Table
+        ipconfig
     }
   }
   pause

@@ -23,7 +23,7 @@ do {
         " LISTAR ALIAS "
         "=============="
         ""
-        Get-Alias
+        Get-Alias | ft
     }
     2 {
         cls

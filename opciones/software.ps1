@@ -35,7 +35,7 @@ do {
         "
         $opcion = read-host "Selecciona una opcion"
         if ($opcion -eq 1){
-          Get-Package
+          Get-Package | ft
         }
         elseif ($opcion -eq 2){
           $numero = ((Get-Package).name).count
@@ -81,7 +81,7 @@ do {
       ""
       $paquete = read-host "Introduce el paquete que deseas desinstalar"
       ""
-      Uninstall-Package $paquete
+      Uninstall-Package $paquete -Force
       ""
       "----- Paquete desinstalado con exito -----"
       ""

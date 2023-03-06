@@ -8,13 +8,14 @@ function menu {
   write-host "3. Gestion de los servicios"
   write-host "4. Gestion de alias"
   write-host "5. Registros de eventos"
-  write-host "6. Información sobre el software y el hardware del sistema"
+  write-host "6. Informacion sobre el software y el hardware del sistema"
   write-host "7. Gestion de las cuentas de usuario"
   write-host "8. Gestion de los grupos"
   write-host "9. Gestion de los archivos y carpetas"
-  write-host ". Ayuda"
+  write-host "10. Gestion del firewall"
+  write-host "11. Ayuda"
   write-host ""
-  write-host ". Salir"
+  write-host "12. Salir"
   write-host ""
 }
 
@@ -58,7 +59,15 @@ do {
       cls
       ./opciones/ac.ps1
     }
+    10 {
+      cls
+      ./opciones/fw.ps1
+    }
+    11 {
+      cls
+      ./opciones/ayuda.ps1
+    }
   }
   pause
 }
-until ($opcion -eq '')
+until ($opcion -eq '12')
